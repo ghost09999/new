@@ -1,38 +1,36 @@
-﻿using System.Linq.Expressions;
+﻿int balance = 1000;
 
-Random random = new Random();
-int secretNumber = random.Next(1, 101);
-int attempts = 0;
-int guess = 0;
-
-Console.WriteLine("число от 1 до 100 ,угадай");
-
-while (true)
+while(true)
 {
-    Console.WriteLine("твое число:");
-    try
-    {
-        guess = Convert.ToInt32(Console.ReadLine());
-    }
-    catch
-    {
-        Console.WriteLine("это не число число");
-        continue;
-    }
+    Console.WriteLine("1 - узнать баланс");
+    Console.WriteLine("2 - снять деньги");
+    Console.WriteLine("Выберите действие: ");
 
-    attempts++;
 
-    if (guess > secretNumber)
+int choice = Convert.ToInt32(Console.ReadLine());
+
+if (choice == 1)
+{
+    Console.WriteLine("Ваш баланс: " + balance);
+}
+else if (choice == 2)
+{
+    Console.WriteLine("Сколько снять?");
+    int sum = Convert.ToInt32(Console.ReadLine());
+
+    if (sum > balance)
     {
-        Console.WriteLine("это много ,меньше");
-    }
-    else if (guess < secretNumber)
-    {
-        Console.WriteLine("это мало ,больше");
+        Console.WriteLine("Баланса не хватает");
     }
     else
     {
-        Console.WriteLine("ты угадал ,ты потратил попыток:" + attempts);
-        break;
+        balance = balance - sum;
+        Console.WriteLine("Остаток: " + balance);
     }
+}
+else
+{
+    Console.WriteLine("Нужны цифры!");
+}
+
 }
