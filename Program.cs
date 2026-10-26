@@ -1,36 +1,22 @@
-﻿int balance = 1000;
-
-while(true)
+﻿while (true)
 {
-    Console.WriteLine("1 - узнать баланс");
-    Console.WriteLine("2 - снять деньги");
-    Console.WriteLine("Выберите действие: ");
+    Console.WriteLine("1 - Калькулятор");
+    Console.WriteLine("2 - Игра Угадай число");
+    Console.WriteLine("3 - Банкомат");
+    Console.WriteLine("Выбери прогу:");
+    
+    int choice = Convert.ToInt32(Console.ReadLine());
 
-
-int choice = Convert.ToInt32(Console.ReadLine());
-
-if (choice == 1)
-{
-    Console.WriteLine("Ваш баланс: " + balance);
-}
-else if (choice == 2)
-{
-    Console.WriteLine("Сколько снять?");
-    int sum = Convert.ToInt32(Console.ReadLine());
-
-    if (sum > balance)
+    if (choice == 1)
     {
-        Console.WriteLine("Баланса не хватает");
+        Calculator.Run();
     }
-    else
+    else if (choice == 2)
     {
-        balance = balance - sum;
-        Console.WriteLine("Остаток: " + balance);
+        GuessGame.Run();
     }
-}
-else
-{
-    Console.WriteLine("Нужны цифры!");
-}
-
+    else if (choice == 3)
+    {
+        ATM.Run();
+    }
 }
