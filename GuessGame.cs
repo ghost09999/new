@@ -13,7 +13,7 @@ Console.WriteLine("число от 1 до 100 ,угадай");
 
 while (true)
 {
-    Console.WriteLine("твое число:");
+    Console.WriteLine("твое число: (0 - выйти из игры)");
     try
     {
         guess = Convert.ToInt32(Console.ReadLine());
@@ -25,6 +25,11 @@ while (true)
     }
 
     attempts++;
+
+    if (guess == 0)
+    {
+        break;
+    }
 
     if (guess > secretNumber)
     {

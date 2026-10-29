@@ -3,6 +3,7 @@
     Console.WriteLine("1 - Калькулятор");
     Console.WriteLine("2 - Игра Угадай число");
     Console.WriteLine("3 - Банкомат");
+    Console.WriteLine("4 - Генератор паролей");
     Console.WriteLine("Выбери прогу:");
     
     int choice = Convert.ToInt32(Console.ReadLine());
@@ -19,4 +20,9 @@
     {
         ATM.Run();
     }
+    else if (choice == 4)
+    {
+        PasswordGen.Run();
+    
+        }
 }
